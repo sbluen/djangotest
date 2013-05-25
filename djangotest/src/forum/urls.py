@@ -4,6 +4,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = patterns('forum.views',
 
+    url(r'^forum/$', 'forum_list', name='forum-list'),
+    url(r'^forum/(?P<id>\d+)/$', 'forum_details', name='forum-details'),
+    url(r'^forum/(?P<id>\d+)/delete/$', 'forum_delete', name='forum-delete'),
+
     url(r'^post/$', 'post_list', name='post-list'),
     url(r'^post/(?P<id>\d+)/$', 'post_details', name='post-details'),
     url(r'^post/(?P<id>\d+)/delete/$', 'post_delete', name='post-delete'),

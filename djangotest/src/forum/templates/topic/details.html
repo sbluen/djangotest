@@ -15,7 +15,7 @@
             <tr>
                 <td style="padding: 10px;">{{ topic.id }}</td>
                 <td>{{ topic }}</td>
-                <td><input type="button" href="{% url topic-delete topic.id %}" id="delete-item" value="delete" /></td>
+                <td><input type="button" href="{% url 'topic-delete' topic.id %}" id="delete-item" value="delete" /></td>
             </tr>
         </table>
         <br />
@@ -23,7 +23,7 @@
         <br />
         <input type="button" onclick="$('#add-form-div').toggle();" value="Edit topic"><br /><br />
         <div id="add-form-div" style="display: none;">
-            <form action="{% url topic-details topic.id %}" method="POST" id="add-form">
+            <form action="{% url 'topic-details' topic.id %}" method="POST" id="add-form">
                     <div id="form-fields">
                         {% csrf_token %}
                         {{ form }}
