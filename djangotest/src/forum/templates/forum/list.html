@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block page-title %}forum{% endblock %}
+
+{% block content %}
+    <h1>forum list</h1><br />
+    <table style="border: solid 1px gray; width: 300px; text-align: center;" id="item-list">
+        <tr style="background-color: #DDD">
+            <th style="padding: 10px;">ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    {% for item in forum_list %}
+        <tr>
+            <td style="padding: 10px;">{{ item.id }}</td>
+            <td>{{ item }}</td>
+            <td><a href="{% url 'forum-details' item.id %}">show</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+    <br />
+    <input type="button" onclick="$('#add-form-div').toggle();" value="Add new forum"><br /><br />
+    <div id="add-form-div" style="display: none;">
+        <form action="{% url 'forum-list' %}" method="POST" id="add-form">
+                <div id="form-fields">
+                    {% csrf_token %}
+                    {{ form }}
+                </div>
+                <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <script type="text/javascript">
+    //alert("test");
+        (new FormHelper('add-form')).bind_for_ajax(
+            function(data) {
+            alert("test");
+                $('#item-list').append('<td style="padding: 10px;">' + data.username + '</td><td>' + "password redacted" + '</td><td><a href="{% url 'forum-list' %}' + data.id + '/">show</a></td>').hide().fadeIn();
+                $('#form-fields').html('');
+                $('#form-fields').append('<input type="hidden" value="' + data.token + '" name="csrfmiddlewaretoken">');
+                $('#form-fields').append(data.form);
+                $('#add-form-div').toggle();
+            },
+            function(data) {
+            alert("test");
+                $('#form-fields').html('');
+                $('#form-fields').append('<input type="hidden" value="' + data.token + '" name="csrfmiddlewaretoken">');
+                $('#form-fields').append(data.form).hide().fadeIn();
+                $('#add-form input[type=submit]').removeAttr('disabled');
+            }
+        );
+    </script>
+{% endblock %}
