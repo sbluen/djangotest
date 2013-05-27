@@ -11,6 +11,9 @@ class Forum(models.Model):
 
     class Meta:
         ordering = ['-id']
+    
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.name
 
 from django.contrib.auth.models import User, Group
 from forum.models import Forum
@@ -27,6 +30,10 @@ class Topic(models.Model):
 
     class Meta:
         ordering = ['-id']
+        
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.title
+    
 from forum.models import Topic
 class Post(models.Model):
     
@@ -43,3 +50,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-id']
+        
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.title

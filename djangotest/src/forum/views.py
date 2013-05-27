@@ -18,6 +18,7 @@ def forum_list(request, template='forum/list.html'):
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
     d['forum_list'] = Forum.objects.all()
+    #d['$'] = d['form']
     return render(request, template, d)
 
 from forum.forms import ForumForm
@@ -34,28 +35,29 @@ def forum_details(request, id, template='forum/details.html'):
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
     d['forum'] = Forum.objects.get(pk=id)
+    d['topics'] = Topic.objects.filter(forum_id=id)
     return render(request, template, d)
 
-def forum_delete(request, id):
-    item = Forum.objects.get(pk=id)
-    item.delete()
-    return JsonResponse()
+# def forum_delete(request, id):
+#     item = Forum.objects.get(pk=id)
+#     item.delete()
+#     return JsonResponse()
 
 from forum.models import Topic
 from forum.forms import TopicForm
-def topic_list(request, template='topic/list.html'):
-    d = {}
-    d['form'] = TopicForm()
-    if request.method == 'POST':
-        form = TopicForm(request.POST)
-        if form.is_valid():
-            item = form.save()
-            return JsonResponse(data={'id': item.id, 'name': str(item), 'form': TopicForm().as_p(), 'token': get_token(request)})
-        else:
-            d['form'] = form
-            return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
-    d['topic_list'] = Topic.objects.all()
-    return render(request, template, d)
+# def topic_list(request, template='topic/list.html'):
+#     d = {}
+#     d['form'] = TopicForm()
+#     if request.method == 'POST':
+#         form = TopicForm(request.POST)
+#         if form.is_valid():
+#             item = form.save()
+#             return JsonResponse(data={'id': item.id, 'name': str(item), 'form': TopicForm().as_p(), 'token': get_token(request)})
+#         else:
+#             d['form'] = form
+#             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
+#     d['topic_list'] = Topic.objects.all()
+#     return render(request, template, d)
 
 from forum.forms import TopicForm
 def topic_details(request, id, template='topic/details.html'):
@@ -71,28 +73,34 @@ def topic_details(request, id, template='topic/details.html'):
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
     d['topic'] = Topic.objects.get(pk=id)
+    posts = Post.objects.filter(topic=id)
+    d['pairs'] = []
+    for i in posts:
+        d['pairs'].append([i, User.objects.get(id=i.created_by_id).username])
     return render(request, template, d)
 
-def topic_delete(request, id):
-    item = Topic.objects.get(pk=id)
-    item.delete()
-    return JsonResponse()
+# def topic_delete(request, id):
+#     item = Topic.objects.get(pk=id)
+#     item.delete()
+#     return JsonResponse()
 
 from forum.models import Post
 from forum.forms import PostForm
-def post_list(request, template='post/list.html'):
-    d = {}
-    d['form'] = PostForm()
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            item = form.save()
-            return JsonResponse(data={'id': item.id, 'name': str(item), 'form': PostForm().as_p(), 'token': get_token(request)})
-        else:
-            d['form'] = form
-            return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
-    d['post_list'] = Post.objects.all()
-    return render(request, template, d)
+
+# def post_list(request, template='post/list.html'):
+#     d = {}
+#     d['form'] = PostForm()
+#     if request.method == 'POST':
+#         form = PostForm(request.POST)
+#         if form.is_valid():
+#             item = form.save()
+#             return JsonResponse(data={'id': item.id, 'name': str(item), 'form': PostForm().as_p(), 'token': get_token(request)})
+#         else:
+#             d['form'] = form
+#             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
+#     d['post_list'] = Post.objects.all()
+#     return render(request, template, d)
+
 
 from forum.forms import PostForm
 def post_details(request, id, template='post/details.html'):
@@ -108,9 +116,10 @@ def post_details(request, id, template='post/details.html'):
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
     d['post'] = Post.objects.get(pk=id)
+    d['username'] = User.objects.get(id = d['post'].created_by_id).username
     return render(request, template, d)
 
-def post_delete(request, id):
-    item = Post.objects.get(pk=id)
-    item.delete()
-    return JsonResponse()
+# def post_delete(request, id):
+#     item = Post.objects.get(pk=id)
+#     item.delete()
+#     return JsonResponse()

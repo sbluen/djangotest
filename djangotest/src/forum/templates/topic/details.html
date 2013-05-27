@@ -6,17 +6,15 @@
 {% block content %}
     <div class="item">
         <h1>topic - {{ topic }} </h1><br />
-        <table style="border: solid 1px gray; width: 300px; text-align: center;" id="item-list">
-            <tr style="background-color: #DDD">
-                <th style="padding: 10px;">ID</th>
-                <th>Name</th>
-                <th>Action</th>
+        <table style="border: solid 1px gray; width: 300px; text-align: center;" table border="3" bordercolor="#c86260" id="item-list">
+            <tr style="background-color: #DDD">          
+                <td style="padding: 10px;">name</td>
+                <td>body</td>
+                <td>date</td>
             </tr>
-            <tr>
-                <td style="padding: 10px;">{{ topic.id }}</td>
-                <td>{{ topic }}</td>
-                <td><input type="button" href="{% url 'topic-delete' topic.id %}" id="delete-item" value="delete" /></td>
-            </tr>
+            {% for post, username in pairs%} 
+            	{% include "post/details.html" with post=post username=username %}
+            {%endfor%}
         </table>
         <br />
         <br />
@@ -55,5 +53,5 @@
             });
         });
     </script>
-    <a href="{% url topic-list %}">back to list</a>
+    <a href="{% url 'forum-details' topic.forum_id %}">Back to forum</a>
 {% endblock %}

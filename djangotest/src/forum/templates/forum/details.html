@@ -7,16 +7,18 @@
     <div class="item">
         <h1>forum - {{ forum }} </h1><br />
         <table style="border: solid 1px gray; width: 300px; text-align: center;" id="item-list">
-            <tr style="background-color: #DDD">
-                <th style="padding: 10px;">ID</th>
-                <th>Name</th>
-                <th>Action</th>
-            </tr>
-            <tr>
+            <tr style="background-color: #DDD">          
                 <td style="padding: 10px;">{{ forum.id }}</td>
                 <td>{{ forum }}</td>
-                <td><input type="button" href="{% url 'forum-delete' forum.id %}" id="delete-item" value="delete" /></td>
+                <td></td>
             </tr>
+            {% for i in topics%} 
+            <tr>            
+                <td style="padding: 10px;">{{ i.id }}</td>
+                <td>{{ i }}</td>
+                <td><a href="{% url 'topic-details' i.id %}">show</a></td>
+            </tr>
+            {%endfor%}
         </table>
         <br />
         <br />
@@ -58,5 +60,5 @@
             });
         });
     </script>
-    <a href="{% url forum-list %}">back to list</a>
+    <a href="{% url 'forum-list' %}">Back to forum set</a>
 {% endblock %}

@@ -1,4 +1,4 @@
-
+{%comment%}
 {% extends "base.html" %}
 
 {% block page-title %}post - {{ post }} {% endblock %}
@@ -15,7 +15,7 @@
             <tr>
                 <td style="padding: 10px;">{{ post.id }}</td>
                 <td>{{ post }}</td>
-                <td><input type="button" href="{% url post-delete post.id %}" id="delete-item" value="delete" /></td>
+                <td><input type="button" href="{% url 'post-delete' post.id %}" id="delete-item" value="delete" /></td>
             </tr>
         </table>
         <br />
@@ -23,7 +23,7 @@
         <br />
         <input type="button" onclick="$('#add-form-div').toggle();" value="Edit post"><br /><br />
         <div id="add-form-div" style="display: none;">
-            <form action="{% url post-details post.id %}" method="POST" id="add-form">
+            <form action="{% url 'post-details' post.id %}" method="POST" id="add-form">
                     <div id="form-fields">
                         {% csrf_token %}
                         {{ form }}
@@ -55,5 +55,16 @@
             });
         });
     </script>
-    <a href="{% url post-list %}">back to list</a>
+    <a href="{% url 'topic-details' post.topic_id%}">back to list</a>
 {% endblock %}
+{%endcomment%}
+			<tr>
+				<td colspan="3" align="left">
+					{{ post.title }}
+				</td>
+			</tr>
+            <tr>            
+                <td style="padding: 10px;">{{ username }}</td>
+                <td>{{ post.body }}</td>
+                <td>{{ post.create_date }}</td>
+            </tr>
