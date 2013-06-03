@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     #url(r'^forum/', include('forum.urls', namespace="forum")),
     url(r'^forum/', include('forum.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('forum.urls'))
 )
 
 

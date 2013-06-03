@@ -39,7 +39,6 @@
     
         (new FormHelper('add-form')).bind_for_ajax(
             //function(data) {
-            	alert("test");
                 $('#form-fields').html('');
                 $('#form-fields').append('<input type="hidden" value="' + data.token + '" name="csrfmiddlewaretoken">');
                 $('#form-fields').append(data.form).hide().fadeIn();

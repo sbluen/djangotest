@@ -13,7 +13,7 @@ def forum_list(request, template='forum/list.html'):
         form = ForumForm(request.POST)
         if form.is_valid():
             item = form.save()
-            return JsonResponse(data={'username': item.username, 'password': item.password, 'form': ForumForm().as_p(), 'token': get_token(request)})
+            return JsonResponse(data={'id': item.id, 'name': str(item), 'form': ForumForm().as_p(), 'token': get_token(request)})
         else:
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)

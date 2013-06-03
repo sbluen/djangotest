@@ -1,22 +1,24 @@
-.. djangoproject documentation master file, created by
-   sphinx-quickstart on Sat May 04 21:12:57 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Documentation for the Code
+**************************
 
-Welcome to djangoproject's documentation!
-=========================================
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
+.. automodule:: an_example_pypi_project
 
 
+useful #1 -- auto members
+=========================
 
-Indices and tables
-==================
+This is something I want to say that is not in the docstring.
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. automodule:: urls
+   :members:
 
+useful #2 -- explicit members
+=============================
+
+This is something I want to say that is not in the docstring.
+
+.. automodule:: an_example_pypi_project.useful_2
+   :members: public_fn_with_sphinxy_docstring, _private_fn_with_docstring
+
+.. autoclass:: MyPublicClass
+   :members: get_foobar, _get_baz
