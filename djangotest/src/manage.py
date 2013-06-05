@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""A script to assist in the management of the application."""
 import os
 import sys
 
