@@ -46,32 +46,13 @@
             
   <div class="section" id="polls-package">
 <h1>polls Package<a class="headerlink" href="#polls-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-polls.detail">
-<span id="detail-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">detail</span></tt> Module<a class="headerlink" href="#module-polls.detail" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="polls.detail.detail">
-<tt class="descclassname">polls.detail.</tt><tt class="descname">detail</tt><big>(</big><em>request</em>, <em>poll_id</em><big>)</big><a class="headerlink" href="#polls.detail.detail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="forms-module">
-<h2><tt class="xref py py-mod docutils literal"><span class="pre">forms</span></tt> Module<a class="headerlink" href="#forms-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-polls.index">
-<span id="index-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">index</span></tt> Module<a class="headerlink" href="#module-polls.index" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="polls.index.index">
-<tt class="descclassname">polls.index.</tt><tt class="descname">index</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#polls.index.index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
 <div class="section" id="module-polls.models">
 <span id="models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt> Module<a class="headerlink" href="#module-polls.models" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="polls.models.Choice">
 <em class="property">class </em><tt class="descclassname">polls.models.</tt><tt class="descname">Choice</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#polls.models.Choice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
-<p>Choice(id, poll_id, choice_text, votes)</p>
+<p>Class for choices of the polls.</p>
 <dl class="exception">
 <dt id="polls.models.Choice.DoesNotExist">
 <em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#polls.models.Choice.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -86,7 +67,7 @@
 
 <dl class="attribute">
 <dt id="polls.models.Choice.objects">
-<tt class="descclassname">Choice.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x037538B0&gt;</em><a class="headerlink" href="#polls.models.Choice.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Choice.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0375F450&gt;</em><a class="headerlink" href="#polls.models.Choice.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -100,7 +81,7 @@
 <dt id="polls.models.Poll">
 <em class="property">class </em><tt class="descclassname">polls.models.</tt><tt class="descname">Poll</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#polls.models.Poll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
-<p>Poll(id, question, pub_date)</p>
+<p>Class for the poll objects.</p>
 <dl class="exception">
 <dt id="polls.models.Poll.DoesNotExist">
 <em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#polls.models.Poll.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -130,41 +111,12 @@
 
 <dl class="attribute">
 <dt id="polls.models.Poll.objects">
-<tt class="descclassname">Poll.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x03753550&gt;</em><a class="headerlink" href="#polls.models.Poll.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Poll.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0375F0F0&gt;</em><a class="headerlink" href="#polls.models.Poll.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="polls.models.Poll.was_published_recently">
 <tt class="descclassname">Poll.</tt><tt class="descname">was_published_recently</tt><big>(</big><big>)</big><a class="headerlink" href="#polls.models.Poll.was_published_recently" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-polls.results">
-<span id="results-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">results</span></tt> Module<a class="headerlink" href="#module-polls.results" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="polls.results.detail">
-<tt class="descclassname">polls.results.</tt><tt class="descname">detail</tt><big>(</big><em>request</em>, <em>poll_id</em><big>)</big><a class="headerlink" href="#polls.results.detail" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-polls.scaffolds">
-<span id="scaffolds-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">scaffolds</span></tt> Module<a class="headerlink" href="#module-polls.scaffolds" title="Permalink to this headline">¶</a></h2>
-<p>Created on May 24, 2013</p>
-<p>&#64;author: Steven Bluen</p>
-<dl class="class">
-<dt id="polls.scaffolds.UserScaffold">
-<em class="property">class </em><tt class="descclassname">polls.scaffolds.</tt><tt class="descname">UserScaffold</tt><a class="headerlink" href="#polls.scaffolds.UserScaffold" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<dl class="attribute">
-<dt id="polls.scaffolds.UserScaffold.password">
-<tt class="descname">password</tt><em class="property"> = &lt;scaffolding.tubes.RandInt object at 0x03BB4DF0&gt;</em><a class="headerlink" href="#polls.scaffolds.UserScaffold.password" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="polls.scaffolds.UserScaffold.username">
-<tt class="descname">username</tt><em class="property"> = &lt;scaffolding.tubes.FirstName object at 0x03B535D0&gt;</em><a class="headerlink" href="#polls.scaffolds.UserScaffold.username" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -203,6 +155,7 @@ pub_date is in the future</p>
 </div>
 <div class="section" id="module-polls.urls">
 <span id="urls-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt> Module<a class="headerlink" href="#module-polls.urls" title="Permalink to this headline">¶</a></h2>
+<p>This is the polls application routing module.</p>
 </div>
 <div class="section" id="module-polls.views">
 <span id="views-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt> Module<a class="headerlink" href="#module-polls.views" title="Permalink to this headline">¶</a></h2>
@@ -210,6 +163,7 @@ pub_date is in the future</p>
 <dt id="polls.views.DetailView">
 <em class="property">class </em><tt class="descclassname">polls.views.</tt><tt class="descname">DetailView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#polls.views.DetailView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.views.generic.detail.DetailView</span></tt></p>
+<p>View for /poll/# (number)/detail.html</p>
 <dl class="attribute">
 <dt id="polls.views.DetailView.model">
 <tt class="descname">model</tt><a class="headerlink" href="#polls.views.DetailView.model" title="Permalink to this definition">¶</a></dt>
@@ -227,6 +181,7 @@ pub_date is in the future</p>
 <dt id="polls.views.IndexView">
 <em class="property">class </em><tt class="descclassname">polls.views.</tt><tt class="descname">IndexView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#polls.views.IndexView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.views.generic.list.ListView</span></tt></p>
+<p>View for /poll</p>
 <dl class="attribute">
 <dt id="polls.views.IndexView.context_object_name">
 <tt class="descname">context_object_name</tt><em class="property"> = 'latest_poll_list'</em><a class="headerlink" href="#polls.views.IndexView.context_object_name" title="Permalink to this definition">¶</a></dt>
@@ -249,6 +204,7 @@ pub_date is in the future</p>
 <dt id="polls.views.ResultsView">
 <em class="property">class </em><tt class="descclassname">polls.views.</tt><tt class="descname">ResultsView</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#polls.views.ResultsView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.views.generic.detail.DetailView</span></tt></p>
+<p>View for /poll/# (number)/results.html</p>
 <dl class="attribute">
 <dt id="polls.views.ResultsView.model">
 <tt class="descname">model</tt><a class="headerlink" href="#polls.views.ResultsView.model" title="Permalink to this definition">¶</a></dt>
@@ -265,7 +221,8 @@ pub_date is in the future</p>
 <dl class="function">
 <dt id="polls.views.vote">
 <tt class="descclassname">polls.views.</tt><tt class="descname">vote</tt><big>(</big><em>request</em>, <em>poll_id</em><big>)</big><a class="headerlink" href="#polls.views.vote" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Helper method for votes.</p>
+</dd></dl>
 
 </div>
 </div>
@@ -279,12 +236,7 @@ pub_date is in the future</p>
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">polls Package</a><ul>
-<li><a class="reference internal" href="#module-polls.detail"><tt class="docutils literal"><span class="pre">detail</span></tt> Module</a></li>
-<li><a class="reference internal" href="#forms-module"><tt class="docutils literal"><span class="pre">forms</span></tt> Module</a></li>
-<li><a class="reference internal" href="#module-polls.index"><tt class="docutils literal"><span class="pre">index</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-polls.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
-<li><a class="reference internal" href="#module-polls.results"><tt class="docutils literal"><span class="pre">results</span></tt> Module</a></li>
-<li><a class="reference internal" href="#module-polls.scaffolds"><tt class="docutils literal"><span class="pre">scaffolds</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-polls.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-polls.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-polls.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>

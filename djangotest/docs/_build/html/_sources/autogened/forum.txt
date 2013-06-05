@@ -1,10 +1,10 @@
 forum Package
 =============
 
-:mod:`admin` Module
--------------------
+:mod:`forum` Package
+--------------------
 
-.. automodule:: forum.admin
+.. automodule:: forum
     :members:
     :undoc-members:
     :show-inheritance:

@@ -3,6 +3,7 @@ from django.utils import timezone
 import datetime
 
 class Poll(models.Model):
+    """Class for the poll objects."""
     question = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     
@@ -12,6 +13,7 @@ class Poll(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 class Choice(models.Model):
+    """Class for choices of the polls."""
     poll = models.ForeignKey(Poll)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)

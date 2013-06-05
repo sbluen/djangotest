@@ -1,6 +1,14 @@
 djangotest Package
 ==================
 
+:mod:`djangotest` Package
+-------------------------
+
+.. automodule:: djangotest
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`admin` Module
 -------------------
 

@@ -1,3 +1,4 @@
+"""This is the forum routing module."""
 
 from django.conf.urls.defaults import *
 from django.contrib.auth import views as auth_views

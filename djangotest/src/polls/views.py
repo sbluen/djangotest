@@ -10,6 +10,7 @@ from django.views import generic
 from polls.models import Choice, Poll
 
 class IndexView(generic.ListView):
+    """View for /poll"""
     template_name = 'polls/index.html'
     context_object_name = 'latest_poll_list'
 
@@ -17,17 +18,18 @@ class IndexView(generic.ListView):
         """Return the last five published polls."""
         return Poll.objects.order_by('-pub_date')[:5]
 
-
 class DetailView(generic.DetailView):
+    """View for /poll/# (number)/detail.html"""
     model = Poll
     template_name = 'polls/detail.html'
 
-
 class ResultsView(generic.DetailView):
+    """View for /poll/# (number)/results.html"""
     model = Poll
     template_name = 'polls/results.html'
     
 def vote(request, poll_id):
+    """Helper method for votes."""
     p = get_object_or_404(Poll, pk=poll_id)
     try:
         selected_choice = p.choice_set.get(pk=request.POST['choice'])
