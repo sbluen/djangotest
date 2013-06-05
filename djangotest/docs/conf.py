@@ -18,6 +18,12 @@ import sys, os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('../src'))
 
+# Set up the Django settings/environment
+from django.core.management import setup_environ
+from djangotest import settings
+
+setup_environ(settings)
+
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
