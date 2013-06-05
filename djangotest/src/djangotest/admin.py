@@ -1,3 +1,5 @@
+"""This module handles the administrator interface."""
+
 from django.contrib import admin
 from polls.models import Choice, Poll
 from forum.models import Forum, Topic, Post

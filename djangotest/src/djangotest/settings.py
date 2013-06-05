@@ -1,3 +1,5 @@
+"""This file contains the project's settings"""
+
 # Django settings for djangotest project.
 
 DEBUG = True
