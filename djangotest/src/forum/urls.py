@@ -17,6 +17,6 @@ urlpatterns = patterns('forum.views',
     url(r'^topic/(?P<id>\d+)/$', 'topic_details', name='topic-details'),
 #     url(r'^topic/(?P<id>\d+)/delete/$', 'topic_delete', name='topic-delete'),
     url(r'^$', 'forum_list', name='forum-list'),
-    url(r'^/(?P<id>\d+)/$', 'forum_details', name='forum-details'),
+    #url(r'^/(?P<id>\d+)/$', 'forum_details', name='forum-details'),
 #     url(r'^/(?P<id>\d+)/delete/$', 'forum_delete', name='forum-delete'),
 )

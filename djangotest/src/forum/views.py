@@ -22,7 +22,6 @@ def forum_list(request, template='forum/list.html'):
             d['form'] = form
             return JsonResponse(data={'form': d['form'].as_p(), 'token': get_token(request)}, success=False)
     d['forum_list'] = Forum.objects.all()
-    #d['$'] = d['form']
     return render(request, template, d)
 
 
