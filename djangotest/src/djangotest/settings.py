@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'polls',
     'forum',
     'django_common',
+    'clear_cache',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
