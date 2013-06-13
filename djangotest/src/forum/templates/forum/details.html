@@ -23,7 +23,7 @@
         <br />
         <br />
         <br />
-        <input type="button" onclick="$('#add-form-div').toggle();" value="Edit forum"><br /><br />
+        <input type="button" onclick="$('#add-form-div').toggle();" value="Add topic"><br /><br />
         <div id="add-form-div" style="display: none;">
             <form action="{% url 'forum-details' forum.id %}" method="POST" id="add-form">
                     <div id="form-fields">
