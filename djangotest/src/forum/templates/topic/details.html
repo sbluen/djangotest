@@ -19,7 +19,7 @@
         <br />
         <br />
         <br />
-        <input type="button" onclick="$('#add-form-div').toggle();" value="Edit topic"><br /><br />
+        <input type="button" onclick="$('#add-form-div').toggle();" value="Add Post"><br /><br />
         <div id="add-form-div" style="display: none;">
             <form action="{% url 'topic-details' topic.id %}" method="POST" id="add-form">
                     <div id="form-fields">
