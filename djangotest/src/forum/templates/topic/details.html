@@ -23,8 +23,10 @@
         <div id="add-form-div" style="display: none;">
             <form action="{% url 'topic-details' topic.id %}" method="POST" id="add-form">
                     <div id="form-fields">
+                    	<table>
                         {% csrf_token %}
                         {{ form }}
+                       </table>
                     </div>
                     <input type="submit" value="Submit" />
             </form>
