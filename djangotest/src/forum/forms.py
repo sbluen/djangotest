@@ -1,6 +1,6 @@
+"""Classes that assist in rendering forms"""
+
 from django import forms
-
-
 from forum.models import Forum
 
 class ForumForm(forms.ModelForm):

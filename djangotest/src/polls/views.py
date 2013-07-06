@@ -1,3 +1,5 @@
+"""Classes used for rendering poll pages"""
+
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render

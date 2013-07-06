@@ -1,6 +1,6 @@
-from django.db import models
+"""Model classes for the forum contents"""
 
-# Create your models here.
+from django.db import models
 
 class Forum(models.Model):
     """Class for forum objects.

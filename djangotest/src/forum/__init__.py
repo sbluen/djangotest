@@ -1,1 +1,0 @@
-"""This file confirms that this name refers to a package and not a module."""

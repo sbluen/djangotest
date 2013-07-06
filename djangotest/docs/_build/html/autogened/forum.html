@@ -23,7 +23,9 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="djangoproject 0.1 documentation" href="../index.html" /> 
+    <link rel="top" title="djangoproject 0.1 documentation" href="../index.html" />
+    <link rel="next" title="manage Module" href="manage.html" />
+    <link rel="prev" title="djangotest Package" href="djangotest.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,6 +37,12 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="manage.html" title="manage Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="djangotest.html" title="djangotest Package"
+             accesskey="P">previous</a> |</li>
         <li><a href="../index.html">djangoproject 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -48,10 +56,10 @@
 <h1>forum Package<a class="headerlink" href="#forum-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2><a class="reference internal" href="#module-forum" title="forum"><tt class="xref py py-mod docutils literal"><span class="pre">forum</span></tt></a> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-forum"></span><p>This file confirms that this name refers to a package and not a module.</p>
-</div>
+<span class="target" id="module-forum"></span></div>
 <div class="section" id="module-forum.forms">
 <span id="forms-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">forms</span></tt> Module<a class="headerlink" href="#module-forum.forms" title="Permalink to this headline">¶</a></h2>
+<p>Classes that assist in rendering forms</p>
 <dl class="class">
 <dt id="forum.forms.ForumForm">
 <em class="property">class </em><tt class="descclassname">forum.forms.</tt><tt class="descname">ForumForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=u':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#forum.forms.ForumForm" title="Permalink to this definition">¶</a></dt>
@@ -70,7 +78,7 @@
 
 <dl class="attribute">
 <dt id="forum.forms.ForumForm.base_fields">
-<tt class="descclassname">ForumForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'name': &lt;django.forms.fields.CharField object at 0x0387DE30&gt;}</em><a class="headerlink" href="#forum.forms.ForumForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">ForumForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'name': &lt;django.forms.fields.CharField object at 0x03B95290&gt;}</em><a class="headerlink" href="#forum.forms.ForumForm.base_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -94,6 +102,11 @@
 <dt id="forum.forms.PostForm.Meta">
 <em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#forum.forms.PostForm.Meta" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
+<dt id="forum.forms.PostForm.Meta.fields">
+<tt class="descname">fields</tt><em class="property"> = ('title', 'body')</em><a class="headerlink" href="#forum.forms.PostForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="forum.forms.PostForm.Meta.model">
 <tt class="descname">model</tt><a class="headerlink" href="#forum.forms.PostForm.Meta.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Post</span></tt></p>
@@ -103,7 +116,7 @@
 
 <dl class="attribute">
 <dt id="forum.forms.PostForm.base_fields">
-<tt class="descclassname">PostForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'title': &lt;django.forms.fields.CharField object at 0x0388E190&gt;, 'body': &lt;django.forms.fields.CharField object at 0x0388E1F0&gt;, 'created_by': &lt;django.forms.models.ModelChoiceField object at 0x0388E2F0&gt;, 'topic': &lt;django.forms.models.ModelChoiceField object at 0x0388E3D0&gt;}</em><a class="headerlink" href="#forum.forms.PostForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">PostForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'title': &lt;django.forms.fields.CharField object at 0x03B95430&gt;, 'body': &lt;django.forms.fields.CharField object at 0x03B95490&gt;}</em><a class="headerlink" href="#forum.forms.PostForm.base_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -127,6 +140,11 @@
 <dt id="forum.forms.TopicForm.Meta">
 <em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#forum.forms.TopicForm.Meta" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
+<dt id="forum.forms.TopicForm.Meta.fields">
+<tt class="descname">fields</tt><em class="property"> = ('title',)</em><a class="headerlink" href="#forum.forms.TopicForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="forum.forms.TopicForm.Meta.model">
 <tt class="descname">model</tt><a class="headerlink" href="#forum.forms.TopicForm.Meta.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Topic</span></tt></p>
@@ -136,7 +154,7 @@
 
 <dl class="attribute">
 <dt id="forum.forms.TopicForm.base_fields">
-<tt class="descclassname">TopicForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'created_by': &lt;django.forms.models.ModelChoiceField object at 0x0387DFB0&gt;, 'title': &lt;django.forms.fields.CharField object at 0x0387DF90&gt;, 'forum': &lt;django.forms.models.ModelChoiceField object at 0x0388E110&gt;}</em><a class="headerlink" href="#forum.forms.TopicForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">TopicForm.</tt><tt class="descname">base_fields</tt><em class="property"> = {'title': &lt;django.forms.fields.CharField object at 0x03B95350&gt;}</em><a class="headerlink" href="#forum.forms.TopicForm.base_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -154,6 +172,7 @@
 </div>
 <div class="section" id="module-forum.models">
 <span id="models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt> Module<a class="headerlink" href="#module-forum.models" title="Permalink to this headline">¶</a></h2>
+<p>Model classes for the forum contents</p>
 <dl class="class">
 <dt id="forum.models.Forum">
 <em class="property">class </em><tt class="descclassname">forum.models.</tt><tt class="descname">Forum</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#forum.models.Forum" title="Permalink to this definition">¶</a></dt>
@@ -194,7 +213,7 @@ Autogenerated initially</p>
 
 <dl class="attribute">
 <dt id="forum.models.Forum.objects">
-<tt class="descclassname">Forum.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0375FAD0&gt;</em><a class="headerlink" href="#forum.models.Forum.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Forum.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x03A7D290&gt;</em><a class="headerlink" href="#forum.models.Forum.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -249,7 +268,7 @@ Autogenerated initially</p>
 
 <dl class="attribute">
 <dt id="forum.models.Post.objects">
-<tt class="descclassname">Post.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x03764670&gt;</em><a class="headerlink" href="#forum.models.Post.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Post.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x03A7DDF0&gt;</em><a class="headerlink" href="#forum.models.Post.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -309,7 +328,7 @@ Autogenerated initially</p>
 
 <dl class="attribute">
 <dt id="forum.models.Topic.objects">
-<tt class="descclassname">Topic.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x037640B0&gt;</em><a class="headerlink" href="#forum.models.Topic.objects" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Topic.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x03A7D830&gt;</em><a class="headerlink" href="#forum.models.Topic.objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -422,6 +441,7 @@ when you run &#8220;manage.py test&#8221;.</p>
 </div>
 <div class="section" id="module-forum.views">
 <span id="views-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt> Module<a class="headerlink" href="#module-forum.views" title="Permalink to this headline">¶</a></h2>
+<p>Classes for rendering forum pages</p>
 <dl class="function">
 <dt id="forum.views.forum_details">
 <tt class="descclassname">forum.views.</tt><tt class="descname">forum_details</tt><big>(</big><em>request</em>, <em>id</em>, <em>template='forum/details.html'</em><big>)</big><a class="headerlink" href="#forum.views.forum_details" title="Permalink to this definition">¶</a></dt>
@@ -472,6 +492,12 @@ Autogenerated initially.</p>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="djangotest.html"
+                        title="previous chapter">djangotest Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="manage.html"
+                        title="next chapter">manage Module</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/autogened/forum.txt"
@@ -503,6 +529,12 @@ Autogenerated initially.</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="manage.html" title="manage Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="djangotest.html" title="djangotest Package"
+             >previous</a> |</li>
         <li><a href="../index.html">djangoproject 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>

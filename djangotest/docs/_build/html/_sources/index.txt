@@ -1,5 +1,13 @@
 Documentation for the Code
 **************************
 
-Please use the module/index links in the corner of this page.
+src
+===
 
+.. toctree::
+   :maxdepth: 4
+
+   autogened/djangotest
+   autogened/forum
+   autogened/manage
+   autogened/polls
