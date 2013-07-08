@@ -1,3 +1,2 @@
-djangotest
 django>=1.5
-MySQLdb>=1.2.2
+MySQL-python>=1.2.2
