@@ -4,10 +4,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User, Group
 from django.middleware.csrf import get_token
-from django_common.http import JsonResponse
 from forum.models import Forum
 from forum.forms import ForumForm
 
+try:
+    from django_common.http import JsonResponse
+except ImportError:
+    #If we are here, we are doing documentation and we don't want interference 
+    #from errors.
+    pass    
 
 def forum_list(request, template='forum/list.html'):
     """View for the list of forums in the forum set.
