@@ -21,5 +21,5 @@ try:
     )
 except ImportError:
     #If we are here, we are doing documentation and we don't want interference 
-    #from errors
+    #from errors.
     pass    
