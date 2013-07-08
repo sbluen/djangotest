@@ -1,0 +1,3 @@
+djangotest
+django
+MySQLdb
