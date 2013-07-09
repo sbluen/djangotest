@@ -9,7 +9,7 @@ from forum.forms import ForumForm
 
 try:
     from django_common.http import JsonResponse
-except ImportError:
+except:
     #If we are here, we are doing documentation and we don't want interference 
     #from errors.
     pass    
